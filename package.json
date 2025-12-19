@@ -1,0 +1,25 @@
+{
+  "name": "real-estate-agent-theme",
+  "version": "1.0.0",
+  "description": "WordPress theme for real estate agents",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo 'Development mode - add your build commands here'",
+    "build": "echo 'Build mode - add your build commands here'",
+    "watch": "echo 'Watch mode - add your watch commands here'"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "real-estate"
+  ],
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
+
