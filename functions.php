@@ -59,8 +59,10 @@ add_action('after_setup_theme', 'smdc_setup');
  * Optimized for performance with proper dependencies and loading strategies
  */
 function smdc_enqueue_assets() {
-    $theme_version = wp_get_theme()->get('Version');
-    $theme_version = $theme_version ? $theme_version : '1.0.0';
+    // Use file modification time for cache busting instead of static version
+    // This ensures browsers always get the latest CSS when the file is rebuilt
+    $stylesheet_path = get_stylesheet_directory() . '/style.css';
+    $theme_version = file_exists($stylesheet_path) ? filemtime($stylesheet_path) : '1.0.0';
     
     // Enqueue theme stylesheet (compiled Tailwind CSS)
     wp_enqueue_style(

@@ -4,9 +4,11 @@
   "description": "WordPress theme for real estate agents",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./assets/css/input.css -o ./style.css --watch",
-    "build": "tailwindcss -i ./assets/css/input.css -o ./style.css --minify",
-    "watch": "tailwindcss -i ./assets/css/input.css -o ./style.css --watch"
+    "dev": "npm run build:css && npm run build:header",
+    "build": "npm run build:css && npm run build:header",
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./style.temp.css --minify",
+    "build:header": "powershell -Command \"(Get-Content ./assets/css/theme-header.css) + (Get-Content ./style.temp.css) | Set-Content ./style.css\" && powershell -Command \"Remove-Item ./style.temp.css\"",
+    "watch": "tailwindcss -i ./assets/css/input.css -o ./style.temp.css --watch"
   },
   "keywords": [
     "wordpress",
