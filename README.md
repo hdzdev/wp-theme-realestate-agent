@@ -1,101 +1,132 @@
-# Real Estate Agent WordPress Theme
+# SMDC Real Estate Agent WordPress Theme
 
-A modern WordPress theme designed for real estate agents and property listings.
-
-## Description
-
-This theme provides a clean, professional design optimized for real estate websites. It includes features for property listings, agent profiles, and contact forms.
-
-## Requirements
-
-- WordPress 5.0 or higher
-- PHP 7.4 or higher
-- MySQL 5.6 or higher
-
-## Installation
-
-1. Download or clone this repository
-2. Upload the theme folder to `/wp-content/themes/` directory
-3. Activate the theme through the 'Themes' menu in WordPress Admin
-4. Configure the theme settings as needed
-
-## Development Setup
-
-### Prerequisites
-
-- Node.js and npm (if using build tools)
-- Composer (if using PHP dependencies)
-
-### Setup Steps
-
-1. Clone the repository:
-   ```bash
-   git clone [your-repo-url]
-   cd realestateagent
-   ```
-
-2. Install Node.js dependencies (if applicable):
-   ```bash
-   npm install
-   ```
-
-3. Install PHP dependencies (if applicable):
-   ```bash
-   composer install
-   ```
-
-4. Start development:
-   ```bash
-   npm run dev
-   ```
-
-## File Structure
-
-```
-realestateagent/
-├── functions.php      # Theme functions and features
-├── index.php          # Main template file
-├── styles.css         # Theme stylesheet
-├── README.md          # This file
-├── .gitignore         # Git ignore rules
-├── package.json       # Node.js dependencies
-├── composer.json      # PHP dependencies
-└── .editorconfig      # Editor configuration
-```
+A highly optimized, mobile-first WordPress theme built with Tailwind CSS for real estate agents showcasing SMDC properties.
 
 ## Features
 
-- Responsive design
-- Customizable options
-- SEO friendly
-- Fast loading
-- Cross-browser compatible
+- ✅ **Mobile-First Design** - Responsive and optimized for all devices
+- ✅ **Performance Optimized** - Lazy loading, deferred scripts, optimized assets
+- ✅ **SEO Friendly** - Schema.org markup, proper heading hierarchy
+- ✅ **Security Hardened** - Proper escaping, sanitization, security headers
+- ✅ **WordPress Standards** - Follows WordPress coding standards and best practices
+- ✅ **Modular Structure** - Template parts for easy maintenance
+- ✅ **Tailwind CSS** - Utility-first CSS framework with custom build process
+
+## Installation
+
+1. Upload the theme folder to `/wp-content/themes/`
+2. Activate the theme through the WordPress admin panel
+3. Install dependencies: `npm install`
+4. Build Tailwind CSS: `npm run build`
 
 ## Development
 
-### Building for Production
+### Prerequisites
+
+- Node.js and npm
+- WordPress 5.0+
+- PHP 7.4+
+
+### Build Commands
 
 ```bash
+# Install dependencies
+npm install
+
+# Build for production (minified)
 npm run build
+
+# Watch for changes during development
+npm run watch
 ```
 
-### Code Standards
+### Directory Structure
 
-This theme follows WordPress coding standards:
-- PHP: WordPress Coding Standards
-- CSS: WordPress CSS Coding Standards
-- JavaScript: WordPress JavaScript Coding Standards
+```
+realestateagent/
+├── assets/
+│   └── css/
+│       └── input.css          # Tailwind source file
+├── template-parts/
+│   ├── components/            # Reusable components
+│   │   ├── property-card.php
+│   │   ├── property-modal.php
+│   │   └── floating-contact.php
+│   └── layout/               # Layout sections
+│       ├── hero-section.php
+│       ├── intro-stats.php
+│       ├── about-section.php
+│       └── contact-section.php
+├── js/
+│   └── main.js               # Theme JavaScript
+├── functions.php             # Theme functions
+├── header.php                # Header template
+├── footer.php                # Footer template
+├── front-page.php            # Front page template
+├── index.php                 # Fallback template
+├── style.css                 # Compiled Tailwind CSS (generated)
+└── tailwind.config.js        # Tailwind configuration
+```
 
-## Support
+## Configuration
 
-For issues, questions, or contributions, please open an issue on the GitHub repository.
+### Theme Settings
+
+The theme supports WordPress Customizer for:
+- Logo upload
+- Hero section content
+- Social media links
+- Footer content
+
+### Menu Setup
+
+1. Go to **Appearance > Menus**
+2. Create a menu and assign it to "Primary Menu" location
+3. The theme includes a fallback menu if no menu is assigned
+
+## Performance Optimizations
+
+- **Lazy Loading Images** - All images load lazily by default
+- **Deferred Scripts** - Non-critical scripts are deferred
+- **Preconnect** - Google Fonts preconnect for faster loading
+- **Removed Bloat** - Removed emoji scripts and unnecessary WordPress features
+- **Optimized Queries** - Database queries optimized for better performance
+- **Security Headers** - X-Content-Type-Options, X-Frame-Options, X-XSS-Protection
+
+## SEO Features
+
+- Schema.org JSON-LD markup for RealEstateAgent
+- Proper heading hierarchy (H1-H6)
+- Semantic HTML5 elements
+- ARIA labels for accessibility
+- Meta tags optimization
+
+## Security Features
+
+- All outputs properly escaped (esc_html, esc_url, esc_attr)
+- Input sanitization
+- Nonce verification for forms
+- Security headers
+- ABSPATH checks
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## License
 
-[Specify your license here - e.g., GPL v2 or later]
+GPL-2.0-or-later
 
-## Changelog
+## Credits
 
-### 1.0.0
-- Initial release
+- Tailwind CSS - https://tailwindcss.com
+- Phosphor Icons - https://phosphoricons.com
+- WordPress - https://wordpress.org
 
+## Support
+
+For issues and feature requests, please contact the theme developer.

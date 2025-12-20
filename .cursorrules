@@ -1,0 +1,111 @@
+Project: SMDC Real Estate Portfolio (WordPress + Tailwind)
+
+Vibe: Professional, Minimalist, High-Trust, Mobile-First
+
+Domain: Real Estate (SMDC Properties)
+
+🧠 MULTI-AGENT SYSTEM (CONTEXT AWARENESS)
+
+🎨 AGENT: UI/UX Designer (Trigger: CSS, Tailwind, HTML, Design)
+
+Role: Enforce "Mobile-First" strictness.
+
+Style Guide: Minimalist, white space heavily utilized, high-contrast typography.
+
+Tailwind Rules:
+
+Use flex and grid over floats.
+
+Spacing: Use p-4, m-4 scales. avoid arbitrary values (e.g., p-[13px]) unless absolutely necessary.
+
+Colors: Stick to the brand palette defined in tailwind.config.js.
+
+Crucial: All classes must be full strings for the Purge/JIT scanner. NO dynamic concatenation (e.g., text-${color}).
+
+Responsive: Always write mobile classes first, then md:, lg: overlays.
+
+⚙️ AGENT: WordPress Architect (Trigger: PHP, Functions, Loops)
+
+Role: Solid, secure, standard-compliant WordPress backend.
+
+Naming Convention: Prefix ALL functions/classes with smdc_ to prevent conflicts.
+
+Structure:
+
+header.php / footer.php: Keep minimal.
+
+front-page.php: Homepage logic.
+
+page-properties.php: Property listing grid.
+
+single-property.php: Individual property details.
+
+template-parts/: Modular components (e.g., content-property.php, hero-section.php).
+
+Assets: strictly use wp_enqueue_scripts. NEVER hardcode <script> or <link> tags in the header.
+
+📈 AGENT: SEO & Data Specialist (Trigger: Content, Meta, Schema)
+
+Role: Optimize for Search Engines (SEO) and Answer Engines (AEO).
+
+Schema.org: Automatically suggest JSON-LD schema for:
+
+RealEstateListing (on property pages).
+
+Person/RealEstateAgent (on about/contact pages).
+
+Optimization:
+
+Images: Suggest loading="lazy" and srcset.
+
+Headings: Ensure strict H1 -> H6 hierarchy.
+
+🚀 AGENT: DevOps (Trigger: Build, Git, Deploy)
+
+Role: Ensure the code travels safely from XAMPP to Hostinger.
+
+Checklist:
+
+Run npm run build (Tailwind production build) before ANY commit.
+
+Check .gitignore (Exclude node_modules, standard WP uploads).
+
+Verify style.css header comments are valid for WP Theme recognition.
+
+📂 DIRECTORY STRUCTURE & PATHS
+
+Root: wp-content/themes/smdc-theme/
+
+Assets: ./assets/css (Input), ./dist (Output CSS/JS)
+
+Partials: ./template-parts/components/ (Cards, Buttons), ./template-parts/layout/ (Heroes, Grids)
+
+🛠️ TECHNICAL CONSTRAINTS
+
+Tailwind setup:
+
+Input: assets/css/input.css
+
+Output: style.css (or dist/output.css depending on functions.php setup).
+
+Config: Ensure content array in tailwind.config.js includes ./**/*.php.
+
+WordPress Loop:
+
+Use WP_Query for custom property lists.
+
+Always use wp_reset_postdata() after custom loops.
+
+Property Data:
+
+Assume we are using Advanced Custom Fields (ACF) or a Custom Post Type property.
+
+Fields likely include: price, location, status (Pre-selling/RFO), amenities.
+
+🚨 CRITICAL REMINDERS
+
+Images: No placeholder images in production code. Use gray divs or semantic placeholders.
+
+Security: Escape everything. (esc_html, esc_url, esc_attr).
+
+Environment: If working on XAMPP, ensure site_url() is handled dynamically so it doesn't break on Hostinger production.

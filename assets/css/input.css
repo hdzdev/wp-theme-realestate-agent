@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for clean modal */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Smooth fade in animation */
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Custom SMDC Colors - Fallback */
+@layer base {
+  :root {
+    --smdc-blue: #1e3a8a;
+    --smdc-gold: #c29a48;
+    --smdc-light: #f3f4f6;
+  }
+}
+
+/* Ensure buttons with bg-smdc-blue have proper background */
+@layer components {
+  .bg-smdc-blue {
+    background-color: var(--smdc-blue) !important;
+  }
+  
+  a.bg-smdc-blue,
+  button.bg-smdc-blue,
+  .bg-smdc-blue.text-white,
+  [class*="bg-smdc-blue"].text-white {
+    color: #ffffff !important;
+  }
+  
+  a.bg-smdc-blue:hover,
+  button.bg-smdc-blue:hover,
+  .bg-smdc-blue:hover:not(.bg-blue-800) {
+    background-color: #1e40af !important;
+  }
+  
+  .text-smdc-blue {
+    color: var(--smdc-blue) !important;
+  }
+  
+  .text-smdc-gold {
+    color: var(--smdc-gold) !important;
+  }
+  
+  .bg-smdc-gold {
+    background-color: var(--smdc-gold) !important;
+  }
+  
+  .bg-smdc-light {
+    background-color: var(--smdc-light) !important;
+  }
+  
+  .modal-open {
+    overflow: hidden;
+  }
+}

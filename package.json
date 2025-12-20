@@ -4,9 +4,9 @@
   "description": "WordPress theme for real estate agents",
   "main": "index.js",
   "scripts": {
-    "dev": "echo 'Development mode - add your build commands here'",
-    "build": "echo 'Build mode - add your build commands here'",
-    "watch": "echo 'Watch mode - add your watch commands here'"
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./style.css --watch",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./style.css --minify",
+    "watch": "tailwindcss -i ./assets/css/input.css -o ./style.css --watch"
   },
   "keywords": [
     "wordpress",
@@ -19,7 +19,9 @@
     "type": "git",
     "url": ""
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
   "dependencies": {}
 }
 
